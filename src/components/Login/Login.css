@@ -1,0 +1,60 @@
+.logo-icon {
+  position: absolute;
+  top: 12px;
+  left: 443px;
+  width: 510px;
+  height: 151px;
+  object-fit: cover;
+}
+.title-text {
+  position: absolute;
+  top: 205px;
+  left: 360px;
+  font-size: medium;
+  display: inline-block;
+  width: 675.5px;
+  -webkit-text-stroke: 1px #0941d2;
+}
+.email-box-formgroup,
+.password-box-formgroup {
+  width: 298px;
+  border: 0;
+  background-color: white;
+  position: absolute;
+  top: 523px;
+  left: 549px;
+}
+.password-box-formgroup {
+  top: 625px;
+}
+.login-button {
+  width: 121px;
+  position: absolute;
+  top: 741px;
+  left: 637px;
+}
+.login-with-google-button {
+  width: 298px;
+  position: absolute;
+  top: 807px;
+  left: 549px;
+}
+.dont-have-an {
+  text-decoration: none;
+  position: absolute;
+  top: 870px;
+  left: 540px;
+  font-size: 20px;
+  color: #000;
+}
+.desktop-1 {
+  position: relative;
+  background: linear-gradient(#dfcf42, #dfcf42), #fff;
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 48px;
+  color: #0941d2;
+  font-family: var(--font-helvetica);
+}

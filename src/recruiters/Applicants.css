@@ -1,0 +1,29 @@
+.applicants-container {
+    text-align: center;
+  }
+  
+  .section-title {
+    color: #0941d2;
+  }
+  
+  .applicants-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .applicant-item {
+    margin-bottom: 15px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .applicant-item h3 {
+    margin: 0;
+  }
+  
+  .applicant-item p {
+    margin: 5px 0;
+  }
+  

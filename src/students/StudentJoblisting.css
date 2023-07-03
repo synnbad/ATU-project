@@ -1,0 +1,31 @@
+.student-job-listings {
+    text-align: center;
+  }
+  
+  .job-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .job-list li {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  h3 {
+    margin: 0;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #0941d2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #063085;
+  }
+  

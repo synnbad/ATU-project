@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Helvetica";
+  src: url("/public/Helvetica Regular.otf");
+  font-weight: 200;
+}
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-helvetica: Helvetica;
+}

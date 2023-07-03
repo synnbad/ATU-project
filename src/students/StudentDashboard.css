@@ -1,0 +1,23 @@
+.student-dashboard {
+  text-align: center;
+}
+
+.job-recommendations {
+  margin-bottom: 40px;
+}
+
+.job-card {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.applied-jobs {
+  margin-bottom: 40px;
+}
+
+.profile {
+  margin-bottom: 40px;
+}

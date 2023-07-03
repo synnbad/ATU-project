@@ -1,0 +1,30 @@
+.recruiter-notifications-container {
+    text-align: center;
+  }
+  
+  .section-title {
+    color: #0941d2;
+  }
+  
+  .notification-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .notification-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .notification-item:hover {
+    background-color: #e8e8e8;
+  }
+  
+  .notification-message {
+    margin: 0;
+  }
+  
