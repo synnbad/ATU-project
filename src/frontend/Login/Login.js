@@ -49,9 +49,9 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
+    <div className="desktop-1">
       <img className="logo-icon" alt="" src="/logo@2x.png" />
-      <div className="title-text">LOGIN</div>
+      <div className="title-text">INTERNSHIP PLACEMENT SYSTEM</div>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="email-box-formgroup" id="email_id">
           <Form.Control
@@ -80,14 +80,20 @@ const Login = () => {
           id="login_btn"
           type="submit"
         >
-          Log In
+          Login
         </Button>
+        <Button
+          className="login-with-google-button"
+          variant="primary"
+          name="Login"
+        >
+          Login with Google
+        </Button>
+        <Link className="dont-have-an" to="/create-account">
+          Don’t have an account? Create one
+        </Link>
       </Form>
-      <Link className="create-account-link" to="/create-account">
-        Create an account
-      </Link>
-
-      <ToastContainer /> {/* Add this line to render the toast container */}
+      <ToastContainer />
     </div>
   );
 };

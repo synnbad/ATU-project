@@ -1,11 +1,30 @@
 import React, { useState } from "react";
 import "./CreateJobListing.css";
 import { toast } from "react-toastify";
+import { Button, Form } from "react-bootstrap";
+import axios from "axios";
 
 const CreateJobListing = () => {
   const [position, setPosition] = useState("");
   const [company, setCompany] = useState("");
   const [location, setLocation] = useState("");
+
+  const addJobListing = async (newJobListing) => {
+    try {
+      // Make an API request to store the new job listing
+      const response = await axios.post("/api/joblistings", newJobListing);
+      
+      // Handle the response or perform any necessary actions
+      console.log(response.data); // Assuming the response contains the saved job listing
+      
+      // Show success toast
+      toast.success("Job listing created successfully!");
+    } catch (error) {
+      // Handle any errors that occur during the API request
+      console.error(error);
+      toast.error("Failed to create job listing. Please try again.");
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,9 +39,6 @@ const CreateJobListing = () => {
     setPosition("");
     setCompany("");
     setLocation("");
-
-    // Show success toast
-    toast.success("Job listing created successfully!");
   };
 
   return (

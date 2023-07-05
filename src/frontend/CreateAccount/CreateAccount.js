@@ -19,16 +19,11 @@ const CreateAccount = () => {
     const formData = {
       email: event.target.email.value,
       password: event.target.password.value,
-      role: userType, // Fix: Add role property
+      role: userType,
     };
 
     try {
-      const response = await axios.post(
-        "http://localhost:3001/Users",
-        formData
-      );
-
-      console.log(response.data);
+      const response = await axios.post("http://localhost:3001/Users", formData);
 
       // Show success toast
       toast.success("User created successfully");
@@ -43,11 +38,7 @@ const CreateAccount = () => {
       console.error(error);
 
       // Check if error response contains a specific message
-      if (
-        error.response &&
-        error.response.data &&
-        error.response.data.message
-      ) {
+      if (error.response && error.response.data && error.response.data.message) {
         // Show error toast with specific message
         toast.error(error.response.data.message);
       } else {
@@ -104,7 +95,7 @@ const CreateAccount = () => {
       <Link className="have-an-account" to="/login">
         Already have an account? Login
       </Link>
-      <ToastContainer /> {/* Add this line to render the toast container */}
+      <ToastContainer />
     </div>
   );
 };

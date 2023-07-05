@@ -10,7 +10,6 @@
   position: absolute;
   top: 205px;
   left: 360px;
-  font-size: medium;
   display: inline-block;
   width: 675.5px;
   -webkit-text-stroke: 1px #0941d2;
@@ -19,7 +18,7 @@
 .password-box-formgroup {
   width: 298px;
   border: 0;
-  background-color: white;
+  background-color: transparent;
   position: absolute;
   top: 523px;
   left: 549px;

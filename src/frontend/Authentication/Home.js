@@ -16,7 +16,7 @@ const Home = () => {
           </h1>
         </div>
         <div className="home-description-container">
-          <p className="home-description">Login or Create an account.</p>
+          <p className="home-description">Login or create an account.</p>
         </div>
 
         <div className="home-links">

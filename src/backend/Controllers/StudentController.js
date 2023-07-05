@@ -1,7 +1,7 @@
 // StudentController.js
 
-import Student from "./src/models/student.js";
-import JobListing from "./JobListing.js";
+import Student from "./src/recruiters/models/student.js";
+import JobListing from "../../../JobListing.js";
 
 // Get Student Applications
 export const getStudentApplications = async (req, res) => {

@@ -2,14 +2,15 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import CreateAccount from "./components/CreateAccount/CreateAccount";
-import Home from "./components/Authentication/Home";
-import StudentDashboard from "./students/StudentDashboard";
-import RecruiterDashboard from "./recruiters/RecruiterDashboard";
-import Login from "./components/Login/Login";
-import CreateJobListing from "./recruiters/CreateJobListing";
-import Applicants from "./recruiters/Applicants";
-import RecruiterNotifications from "./recruiters/RecuiterNotifications"
+import CreateAccount from "../components/CreateAccount/CreateAccount.js";
+import Home from "../components/Authentication/Home.js";
+import StudentDashboard from "../students/StudentDashboard.js";
+import RecruiterDashboard from "../recruiters/RecruiterDashboard.js";
+import Login from "../components/Login/Login.js";
+import CreateJobListing from "../recruiters/CreateJobListing.js";
+import Applicants from "../recruiters/Applicants.js";
+import RecruiterNotifications from "../recruiters/RecuiterNotifications.js"
+
 function App() {
   const location = useLocation();
 
