@@ -1,3 +1,4 @@
+//Imports
 import express from "express";
 import bcrypt from "bcrypt";
 import Users from "./Models/Users.js";
@@ -7,7 +8,7 @@ import JobListing from "./Models/JobListing.js";
 import ApplicantModel from "./Models/ApplicantModel.js";
 import Notification from "./Models/Notification.js";
 import StudentModel from "./Models/StudentModel.js";
-import RecruiterModel from"./Models/RecruiterModel.js";
+import RecruiterModel from "./Models/RecruiterModel.js";
 
 const app = express();
 const port = 3001;
@@ -28,8 +29,13 @@ mongoose
 // Middleware to parse JSON body
 app.use(express.json());
 
-// Enable CORS
-app.use(cors());
+// Enable CORS with specific origin and exposed headers
+const corsOptions = {
+  origin: "http://localhost:3000",
+  exposedHeaders: ["Content-Length", "Authorization"],
+};
+
+app.use(cors(corsOptions));
 
 // Login route
 app.post("/Login", async (req, res) => {
@@ -61,7 +67,7 @@ app.post("/Login", async (req, res) => {
 });
 
 // Create Account Route
-app.post("/CreateAccount", async (req, res) => {
+app.post("/Users", async (req, res) => {
   try {
     const { email, password, role } = req.body;
 
