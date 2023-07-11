@@ -1,11 +1,13 @@
 import express from "express";
 import bcrypt from "bcrypt";
-import Users from "../../Users.js";
+import Users from "./Models/Users.js";
 import mongoose from "mongoose";
 import cors from "cors";
-import JobListing from "../../JobListing.js"
-import Applicant from "../recruiters/Applicants.js"
-import Notification from "./Notification.js";
+import JobListing from "./Models/JobListing.js";
+import ApplicantModel from "./Models/ApplicantModel.js";
+import Notification from "./Models/Notification.js";
+import StudentModel from "./Models/StudentModel.js";
+import RecruiterModel from"./Models/RecruiterModel.js";
 
 const app = express();
 const port = 3001;
@@ -61,7 +63,7 @@ app.post("/Login", async (req, res) => {
 // Create Account Route
 app.post("/CreateAccount", async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, role } = req.body;
 
     // Check if the user already exists
     const existingUser = await Users.findOne({ email });
@@ -74,8 +76,16 @@ app.post("/CreateAccount", async (req, res) => {
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create a new user account
-    const newUser = await Users.create({ email, password: hashedPassword });
+    // Create a new user account based on the role
+    let newUser;
+    if (role === "student") {
+      newUser = await StudentModel.create({ email, password: hashedPassword });
+    } else if (role === "recruiter") {
+      newUser = await RecruiterModel.create({ email, password: hashedPassword });
+    } else {
+      res.status(400).json({ error: "Invalid role" });
+      return;
+    }
 
     res.status(201).json(newUser);
   } catch (error) {
@@ -116,12 +126,12 @@ app.post("/CreateJobListing", async (req, res) => {
 });
 
 // Create Applicant Profile route
-app.post("/Applicants", async (req, res) => {
+app.post("/ApplicantModel", async (req, res) => {
   try {
     const { name, university, course } = req.body;
 
     // Create a new applicant profile
-    const newApplicant = await Applicant.create({ name, university, course });
+    const newApplicant = await ApplicantModel.create({ name, university, course });
 
     res.status(201).json(newApplicant);
   } catch (error) {
@@ -137,7 +147,7 @@ app.put("/Applicants/:applicantId", async (req, res) => {
     const { name, university, course } = req.body;
 
     // Update the applicant profile
-    const updatedApplicant = await Applicant.findByIdAndUpdate(
+    const updatedApplicant = await ApplicantModel.findByIdAndUpdate(
       applicantId,
       { name, university, course },
       { new: true }
@@ -160,7 +170,7 @@ app.get("/Applicants/:applicantId", async (req, res) => {
     const applicantId = req.params.applicantId;
 
     // Fetch the applicant details
-    const applicant = await Applicant.findById(applicantId);
+    const applicant = await ApplicantModel.findById(applicantId);
 
     if (!applicant) {
       res.status(404).json({ error: "Applicant not found" });
@@ -195,7 +205,7 @@ app.post("/Applicants/:applicantId/applications", async (req, res) => {
     };
 
     // Update the applicant's applications
-    const updatedApplicant = await Applicant.findByIdAndUpdate(
+    const updatedApplicant = await ApplicantModel.findByIdAndUpdate(
       applicantId,
       { $push: { applications: application } },
       { new: true }
@@ -218,7 +228,7 @@ app.get("/StudentApplications/:studentId", async (req, res) => {
     const studentId = req.params.studentId;
 
     // Fetch the student's applications
-    const studentApplications = await Applicant.find({ _id: studentId }, "applications");
+    const studentApplications = await ApplicantModel.find({ _id: studentId }, "applications");
 
     if (!studentApplications) {
       res.status(404).json({ error: "Student applications not found" });
@@ -236,8 +246,8 @@ app.get("/StudentDashboard/:studentId", async (req, res) => {
   try {
     const studentId = req.params.studentId;
 
-    // Fetch the student dashboard data
-    const studentDashboardData = await studentDashboardData(studentId);
+    // Fetch the student dashboard data and process it
+    const studentDashboardData = await getStudentDashboardData(studentId);
 
     res.status(200).json(studentDashboardData);
   } catch (error) {
@@ -277,3 +287,21 @@ app.get("/StudentNotifications/:studentId", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+// Function to fetch and process student dashboard data
+async function getStudentDashboardData(studentId) {
+  // Fetch student details
+  const student = await ApplicantModel.findById(studentId);
+
+  // Fetch student applications
+  const applications = await ApplicantModel.find({ _id: studentId }, "applications");
+
+  // Fetch student notifications
+  const notifications = await Notification.find({ recipient: studentId });
+
+  return {
+    student,
+    applications,
+    notifications,
+  };
+}

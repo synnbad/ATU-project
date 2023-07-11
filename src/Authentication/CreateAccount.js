@@ -50,7 +50,7 @@ const CreateAccount = () => {
 
   return (
     <div className="create-account">
-      <img className="logo-icon" alt="" src="/logo@2x.png" />
+      <img className="logo-icon" alt="" src="/logo.png" />
       <div className="title-text">CREATE ACCOUNT</div>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="email-box-formgroup" id="email_id">

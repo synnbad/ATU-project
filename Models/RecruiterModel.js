@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const recruiterSchema = new mongoose.Schema({
   name: {
@@ -23,6 +23,4 @@ const recruiterSchema = new mongoose.Schema({
   }],
 });
 
-const Recruiter = mongoose.model('Recruiter', recruiterSchema);
-
-module.exports = Recruiter;
+export default mongoose.model('Recruiter', recruiterSchema);

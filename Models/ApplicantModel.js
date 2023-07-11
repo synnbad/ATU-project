@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+
 
 const applicantSchema = new mongoose.Schema({
   name: {
@@ -33,4 +34,4 @@ const applicantSchema = new mongoose.Schema({
 
 const ApplicantModel = mongoose.model('Applicant', applicantSchema);
 
-module.exports = ApplicantModel;
+export default ApplicantModel;
