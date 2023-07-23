@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import connectDB from "./backend/mongodbConnect.js";
 import loginRoute from "./backend/routes/loginRoute.js";
 import usersRoute from "./backend/routes/usersRoute.js";
 import recruiterDashboardRoutes from "./backend/routes/recruiterDashboardRoute.js";
@@ -9,6 +10,8 @@ import studentDashboardRoute from "./backend/routes/studentDashboardRoute.js";
 import studentApplicationsRoute from "./backend/routes/studentApplicationRoute.js"
 import studentJobListingRoute from "./backend/routes/studentJobListingRoute.js";
 import studentNotificationsRoute from "./backend/routes/studentNotificationsRoute.js";
+
+connectDB();
 
 const app = express();
 const port = 3001;

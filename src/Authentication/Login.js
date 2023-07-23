@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button, FormLabel } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
@@ -11,6 +11,7 @@ import logo from "./logo.png";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
@@ -23,6 +24,7 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     const formData = {
       email,
       password,
@@ -30,7 +32,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/Login",
+        "http://localhost:3001/login",
         formData
       );
 

@@ -1,5 +1,5 @@
 import express from "express";
-import JobListing from "../backend/Models/JobListing.js";
+import JobListing from "../Models/JobListing.js";
 
 const router = express.Router();
 
