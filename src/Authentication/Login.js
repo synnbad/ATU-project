@@ -6,11 +6,12 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 
-
+import logo from "./logo.png";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
@@ -23,13 +24,17 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     const formData = {
       email,
       password,
     };
 
     try {
-      const response = await axios.post("http://localhost:3001/Login", formData);
+      const response = await axios.post(
+        "http://localhost:3001/login",
+        formData
+      );
 
       console.log(response.data);
 
@@ -51,30 +56,33 @@ const Login = () => {
   };
 
   return (
-    <div className="Login-form">
-      <img className="logo-icon" alt="" src="/logo.png" />
-      <div className="title-text">INTERNSHIP PLACEMENT SYSTEM</div>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="email-box-formgroup" id="email_id">
+    <div id="login">
+      <img id="login-logo" src={logo} alt="logo"/>
+      <h1>INTERNSHIP PLACEMENT SYSTEM</h1>
+
+      <Form id="login-form" onSubmit={handleSubmit}>
+        <Form.Group id="email-group">
           <Form.Control
             type="email"
             name="email"
-            id="email_id"
-            placeholder="Email"
+            id="email"
+            placeholder="Enter email"
             value={email}
             onChange={handleEmailChange}
           />
         </Form.Group>
-        <Form.Group className="password-box-formgroup" id="password_box">
+
+        <Form.Group id="password-group">
           <Form.Control
             type="password"
             name="password"
-            id="password_box"
+            id="password"
             placeholder="Password"
             value={password}
             onChange={handlePasswordChange}
           />
         </Form.Group>
+
         <Button
           className="login-button"
           variant="primary"
@@ -84,16 +92,10 @@ const Login = () => {
         >
           Login
         </Button>
-        <Button
-          className="login-with-google-button"
-          variant="primary"
-          name="Login"
-        >
-          Login with Google
-        </Button>
-        <Link className="dont-have-an" to="/create-account">
-          Don’t have an account? Create one
-        </Link>
+
+        <Link id="no-account" to="/create-account">
+            Don’t have an account? Create one
+          </Link>
       </Form>
       <ToastContainer />
     </div>

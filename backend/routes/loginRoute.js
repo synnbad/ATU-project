@@ -1,15 +1,16 @@
 import express from "express";
 import bcrypt from "bcrypt";
-import Users from "./backend/Models/Users.js";
+import Users from "../Models/Users.js";
 
 const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
+
     const { email, password } = req.body;
 
     // Check if the user exists in the database
-    const user = await Users.findOne({ email });
+    const user = await Users.findOne({ email: email });
 
     if (!user) {
       res.status(404).json({ error: "User not found" });
@@ -25,7 +26,12 @@ router.post("/", async (req, res) => {
     }
 
     // If the email and password are valid, return a success message
-    res.status(200).json({ message: "Login successful" });
+    res.status(200).json({
+      email: user.email, 
+      role: user.role ,
+      message: "Login successful",
+    });
+
   } catch (error) {
     console.error("Error logging in:", error);
     res.status(500).json({ error: "An error occurred while logging in" });

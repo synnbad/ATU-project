@@ -1,5 +1,5 @@
 import express from "express";
-import ApplicantModel from "../backend/Models/ApplicantModel.js";
+import ApplicantModel from "../Models/ApplicantModel.js";
 
 const router = express.Router();
 

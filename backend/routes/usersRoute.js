@@ -1,17 +1,17 @@
 import express from "express";
 import bcrypt from "bcrypt";
-import Users from "../backend/Models/Users.js";
-import StudentModel from "../backend/Models/StudentModel.js";
-import RecruiterModel from "../backend/Models/RecruiterModel.js";
+import User from "../Models/Users.js";
+import StudentModel from "../Models/StudentModel.js";
+import RecruiterModel from "../Models/RecruiterModel.js";
 
 const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
-    const { email, password, role } = req.body;
+    const { name, email, education, skills, password, role } = req.body;
 
     // Check if the user already exists
-    const existingUser = await Users.findOne({ email });
+    const existingUser = await User.findOne({ email });
 
     if (existingUser) {
       res.status(400).json({ error: "User already exists" });
@@ -22,17 +22,20 @@ router.post("/", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create a new user account based on the role
-    let newUser;
+    let newUser = await User.create({email, password: hashedPassword, role });
+    
     if (role === "student") {
-      newUser = await StudentModel.create({ email, password: hashedPassword });
+      let newStudent = await StudentModel.create({ name, email, education, skills });
+      res.status(201).json(newStudent);
     } else if (role === "recruiter") {
-      newUser = await RecruiterModel.create({ email, password: hashedPassword });
+      let newRecruiter = await RecruiterModel.create({ name, email });
+      res.status(201).json(newRecruiter);
     } else {
       res.status(400).json({ error: "Invalid role" });
       return;
     }
 
-    res.status(201).json(newUser);
+    
   } catch (error) {
     console.error("Error creating user account:", error);
     res.status(500).json({ error: "An error occurred while creating user account" });

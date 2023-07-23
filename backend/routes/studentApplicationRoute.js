@@ -1,6 +1,6 @@
 import express from "express";
-import ApplicantModel from "../backend/Models/ApplicantModel.js";
-import Notification from "../backend/Models/Notification.js";
+import ApplicantModel from "../Models/ApplicantModel.js";
+import Notification from "../Models/Notification.js";
 
 const router = express.Router();
 
