@@ -1,31 +1,20 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import loginRoutes from "./routes/login.js";
-import usersRoutes from "./routes/users.js";
-import recruiterDashboardRoutes from "./routes/recruiterDashboard.js";
-import jobListingRoutes from "./routes/jobListing.js";
-import applicantModelRoutes from "./routes/applicantModel.js";
-import studentDashboardRoutes from "./routes/studentDashboard.js";
-import studentApplicationsRoutes from "./routes/studentApplications.js";
-import studentJobListingRoutes from "./routes/studentJobListing.js";
-import studentNotificationsRoutes from "./routes/studentNotifications.js";
+import loginRoutes from "./backend/routes/loginRoutes.js";
+import usersRoutes from "./routes/usersRoutes.js";
+import recruiterDashboardRoutes from "./backend/routes/recruiterDashboardRoute.js";
+import jobListingRoutes from "./backend/routes/jobListingRoute.js";
+import applicantModelRoutes from "./backend/routes/applicantModelRoute.js";
+import studentDashboardRoutes from "./backend/routes/studentDashboardRoute.js";
+import studentApplicationsRoutes from "./routes/studentApplicationsRoute.js";
+import studentJobListingRoutes from "./backend/routes/studentJobListingRoute.js";
+import studentNotificationsRoutes from "./backend/routes/studentNotificationsRoute.js";
 
 const app = express();
 const port = 3001;
 
-// Connect to MongoDB
-mongoose
-  .connect("mongodb+srv://<your-mongodb-connection-url>", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
-  });
+
 
 // Middleware to parse JSON body
 app.use(express.json());
