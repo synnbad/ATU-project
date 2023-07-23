@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "./logo.png";
+import logo from "./atu-logo.png";
 import "./Home.css";
 
 const Home = () => {
@@ -15,9 +15,7 @@ const Home = () => {
             Welcome to the Internship Placement System!
           </h1>
         </div>
-        <div className="home-description-container">
-          <p className="home-description">Login or create an account.</p>
-        </div>
+      
 
         <div className="home-links">
           <Link to="/login" className="home-link">
