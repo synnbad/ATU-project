@@ -1,15 +1,14 @@
 import express from "express";
-import mongoose from "mongoose";
 import cors from "cors";
-import loginRoutes from "./backend/routes/loginRoutes.js";
-import usersRoutes from "./routes/usersRoutes.js";
+import loginRoute from "./backend/routes/loginRoute.js";
+import usersRoute from "./backend/routes/usersRoute.js";
 import recruiterDashboardRoutes from "./backend/routes/recruiterDashboardRoute.js";
 import jobListingRoutes from "./backend/routes/jobListingRoute.js";
-import applicantModelRoutes from "./backend/routes/applicantModelRoute.js";
-import studentDashboardRoutes from "./backend/routes/studentDashboardRoute.js";
-import studentApplicationsRoutes from "./routes/studentApplicationsRoute.js";
-import studentJobListingRoutes from "./backend/routes/studentJobListingRoute.js";
-import studentNotificationsRoutes from "./backend/routes/studentNotificationsRoute.js";
+import applicantModelRoute from "./backend/routes/applicantModelRoute.js";
+import studentDashboardRoute from "./backend/routes/studentDashboardRoute.js";
+import studentApplicationsRoute from "./backend/routes/studentApplicationRoute.js"
+import studentJobListingRoute from "./backend/routes/studentJobListingRoute.js";
+import studentNotificationsRoute from "./backend/routes/studentNotificationsRoute.js";
 
 const app = express();
 const port = 3001;
@@ -28,15 +27,15 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Routes
-app.use("/login", loginRoutes);
-app.use("/users", usersRoutes);
+app.use("/login", loginRoute);
+app.use("/users", usersRoute);
 app.use("/recruiterDashboard", recruiterDashboardRoutes);
 app.use("/jobListing", jobListingRoutes);
-app.use("/applicantModel", applicantModelRoutes);
-app.use("/studentDashboard", studentDashboardRoutes);
-app.use("/studentApplications", studentApplicationsRoutes);
-app.use("/studentJobListing", studentJobListingRoutes);
-app.use("/studentNotifications", studentNotificationsRoutes);
+app.use("/applicantModel", applicantModelRoute);
+app.use("/studentDashboard", studentDashboardRoute);
+app.use("/studentApplications", studentApplicationsRoute);
+app.use("/studentJobListing", studentJobListingRoute);
+app.use("/studentNotifications", studentNotificationsRoute);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
