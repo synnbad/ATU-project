@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
@@ -57,7 +56,6 @@ const Login = () => {
           <Form.Control
             type="email"
             name="email"
-            id="email_id"
             placeholder="Email"
             value={email}
             onChange={handleEmailChange}
@@ -66,7 +64,6 @@ const Login = () => {
         <Form.Group className="password-box-formgroup" id="password_box">
           <Form.Control
             type="password"
-            name="password"
             id="password_box"
             placeholder="Password"
             value={password}
