@@ -8,9 +8,9 @@ const RecruiterDashboard = () => {
   const jobListings = [
     {
       id: 1,
-      company: "Company X",
-      position: "Software Engineer",
-      location: "City A",
+      company: "Vodafone Ghana",
+      position: "Software Intern",
+      location: "Accra",
     },
     // Rest of the job listings data...
   ];

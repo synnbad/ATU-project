@@ -1,30 +1,77 @@
-/* DashboardContainer */
-.dashboard-container {
+/* RecruiterDashboard.module.css */
+
+.recruiter-dashboard {
+  padding: 20px;
+  margin: auto;
+  width: 60%;
   text-align: center;
+  background-color: gainsboro;
+  
+  padding: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* SectionTitle */
-.section-title {
-  color: #0941d2;
+.Title{
+  align-items: center;
   
 }
 
-/* Button */
-button {
-  padding: 10px 20px;
-  background-color: #0941d2;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.section {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  background-color: #438cdf;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center align section content */
+}
+
+.section h2 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 15px;
   margin-bottom: 10px;
+  border: 1px solid #e0e0e0;
+  background-color:  #438cdf;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
-  background-color: #063085;
+Button {
+  margin-right: 15px;
+  margin:auto;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ListItem */
-list-item {
-  margin-bottom: 15px;
+/* Add hover and focus effects for buttons */
+Button:hover,
+Button:focus {
+  background-color: #0941d2;
+  color: #ffffff;
+}
+
+/* Add a custom button style for primary actions */
+.primary-button {
+  background-color: #0941d2;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+  background-color: #063092;
 }
