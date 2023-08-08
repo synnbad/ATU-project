@@ -19,7 +19,6 @@ const CreateAccount = () => {
     const formData = {
       email: event.target.email.value,
       password: event.target.password.value,
-      role: userType,
     };
 
     try {

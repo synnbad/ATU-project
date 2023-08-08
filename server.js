@@ -10,6 +10,8 @@ import studentDashboardRoute from "./backend/routes/studentDashboardRoute.js";
 import studentApplicationsRoute from "./backend/routes/studentApplicationRoute.js"
 import studentJobListingRoute from "./backend/routes/studentJobListingRoute.js";
 import studentNotificationsRoute from "./backend/routes/studentNotificationsRoute.js";
+import createStudentAccount from "./backend/routes/createStudentAccount.js";
+import createRecruiterAccount from "./backend/routes/createRecruiterAccount.js";
 
 connectDB();
 
@@ -39,6 +41,9 @@ app.use("/studentDashboard", studentDashboardRoute);
 app.use("/studentApplications", studentApplicationsRoute);
 app.use("/studentJobListing", studentJobListingRoute);
 app.use("/studentNotifications", studentNotificationsRoute);
+app.use("/createStudentAccount",createStudentAccount);
+app.use("/createRecruiterAccount",createRecruiterAccount);
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
