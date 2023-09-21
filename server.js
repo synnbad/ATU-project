@@ -3,8 +3,8 @@ import cors from "cors";
 import connectDB from "./backend/mongodbConnect.js";
 import loginRoute from "./backend/routes/loginRoute.js";
 import usersRoute from "./backend/routes/usersRoute.js";
-import recruiterDashboardRoutes from "./backend/routes/recruiterDashboardRoute.js";
-import jobListingRoutes from "./backend/routes/jobListingRoute.js";
+import recruiterDashboardRoutes from "./backend/routes/RecruiterDashboardRoute.js";
+import jobListingRoutes from "./backend/routes/JobListingRoute.js";
 import applicantModelRoute from "./backend/routes/applicantModelRoute.js";
 import studentDashboardRoute from "./backend/routes/studentDashboardRoute.js";
 import studentApplicationsRoute from "./backend/routes/studentApplicationRoute.js"

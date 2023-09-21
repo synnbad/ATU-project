@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post("/createStudentAccount", async (req, res) => {
   try {
-    const { email, password, name, education, skills, resume, role } = req.body;
+    const { email, password, name, education, skills, university, role } = req.body;
 
     // Check if the user already exists
     const existingUser = await Users.findOne({ email });
@@ -25,7 +25,7 @@ router.post("/createStudentAccount", async (req, res) => {
       name,
       education,
       skills,
-      resume,
+      university,
     });
 
     // Save the user to the database

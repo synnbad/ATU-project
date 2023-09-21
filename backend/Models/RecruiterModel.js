@@ -24,3 +24,6 @@ const recruiterSchema = new mongoose.Schema({
 });
 
 export default mongoose.model('Recruiter', recruiterSchema);
+
+
+

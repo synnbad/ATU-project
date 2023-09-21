@@ -1,6 +1,6 @@
 import express from "express";
 import RecruiterModel from "../Models/RecruiterModel.js";
-import JobListing from "../Models/JobListing.js";
+import JobListing from "../Models/JobListing.js"; 
 import Notification from "../Models/Notification.js";
 
 const router = express.Router();

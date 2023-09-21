@@ -3,7 +3,7 @@ import JobListing from "../Models/JobListing.js";
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+router.post("/joblistings", async (req, res) => {
   try {
     const { title, company, position, location } = req.body;
 

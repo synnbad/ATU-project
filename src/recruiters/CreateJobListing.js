@@ -12,7 +12,7 @@ const CreateJobListing = () => {
   const addJobListing = async (newJobListing) => {
     try {
       // Make an API request to store the new job listing
-      const response = await axios.post("/api/joblistings", newJobListing);
+      const response = await axios.post("/joblistings", newJobListing);
       
       // Handle the response or perform any necessary actions
       console.log(response.data); // Assuming the response contains the saved job listing

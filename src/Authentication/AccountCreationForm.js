@@ -8,9 +8,9 @@ const AccountCreationForm = ({ userType, onSubmit }) => {
   const [email, setEmail] = useState("");
   const [education, setEducation] = useState("");
   const [skills, setSkills] = useState("");
-  const [resume, setResume] = useState("");
-  const [company, setCompany] = useState("");
-  const [position, setPosition] = useState("");
+  const [university, setUniversity] = useState("");
+  const [level, setLevel] = useState("");
+  const [residence, setResidence] = useState("");
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -29,15 +29,15 @@ const AccountCreationForm = ({ userType, onSubmit }) => {
   };
 
   const handleResumeChange = (event) => {
-    setResume(event.target.value);
+    setUniversity(event.target.value);
   };
 
   const handleCompanyChange = (event) => {
-    setCompany(event.target.value);
+    setLevel(event.target.value);
   };
 
   const handlePositionChange = (event) => {
-    setPosition(event.target.value);
+    setResidence(event.target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -47,9 +47,9 @@ const AccountCreationForm = ({ userType, onSubmit }) => {
       email,
       education,
       skills,
-      resume,
-      company,
-      position,
+      university,
+      level,
+      residence,
     };
 
     try {
@@ -113,11 +113,11 @@ const AccountCreationForm = ({ userType, onSubmit }) => {
       
       )}
       {userType === "student" && (
-        <Form.Group controlId="resume">
-          <Form.Label>Resume</Form.Label>
+        <Form.Group controlId="Level">
+          <Form.Label>University</Form.Label>
           <Form.Control
             type="text"
-            value={resume}
+            value={university}
             onChange={handleResumeChange}
             required
           />
@@ -125,11 +125,11 @@ const AccountCreationForm = ({ userType, onSubmit }) => {
         
       )}
       {userType === "recruiter" && (
-        <Form.Group controlId="company">
-          <Form.Label>Company</Form.Label>
+        <Form.Group controlId="Location">
+          <Form.Label>Location</Form.Label>
           <Form.Control
             type="text"
-            value={company}
+            value={level}
             onChange={handleCompanyChange}
             required
           />
@@ -137,11 +137,11 @@ const AccountCreationForm = ({ userType, onSubmit }) => {
         
       )}
       {userType === "recruiter" && (
-        <Form.Group controlId="position">
-          <Form.Label>Position</Form.Label>
+        <Form.Group controlId="residence">
+          <Form.Label>Residence</Form.Label>
           <Form.Control
             type="text"
-            value={position}
+            value={residence}
             onChange={handlePositionChange}
             required
           />
