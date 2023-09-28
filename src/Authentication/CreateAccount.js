@@ -42,9 +42,9 @@ const CreateAccount = () => {
     try {
       const response = await axios.post(
         userType === "student"
-          ? "http://localhost:3001/createStudentAccountRoute"
+          ? "http://localhost:3001/createStudentAccount"
           : userType === "recruiter"
-          ? "http://localhost:3001/createRecruiterAccountRoute"
+          ? "http://localhost:3001/createRecruiterAccount"
           : "",
         formData
       );

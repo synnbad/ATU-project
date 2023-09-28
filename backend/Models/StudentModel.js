@@ -12,7 +12,9 @@ const studentSchema = new mongoose.Schema({
   role: {
     type: String,
     required: true,
+    enum: ["student","recruiter"],
   },
+  
   education: {
     type: String,
     required: true,
