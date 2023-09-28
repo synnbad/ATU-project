@@ -9,12 +9,20 @@ const studentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  role: {
+    type: String,
+    required: true,
+  },
   education: {
     type: String,
     required: true,
   },
   skills: {
     type: [String],
+    required: true,
+  },
+  university: {
+    type: String,
     required: true,
   },
   appliedJobs: [{

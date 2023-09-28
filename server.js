@@ -41,8 +41,8 @@ app.use("/studentDashboard", studentDashboardRoute);
 app.use("/studentApplications", studentApplicationsRoute);
 app.use("/studentJobListing", studentJobListingRoute);
 app.use("/studentNotifications", studentNotificationsRoute);
-app.use("/createStudentAccountRoute",createStudentAccount);
-app.use("/createRecruiterAccountRoute",createRecruiterAccount);
+app.use("/createStudentAccount",createStudentAccount);
+app.use("/createRecruiterAccount",createRecruiterAccount);
 
 
 app.listen(port, () => {

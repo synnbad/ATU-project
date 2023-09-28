@@ -9,9 +9,24 @@ const recruiterSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  role: {
+    type: String,
+    required: true,
+  },
+
+  password: {
+    type: String,
+    required: true,
+  },
   company: {
     type: String,
     required: true,
+  },
+
+  location: {
+    type: String,
+    required:true,
+
   },
   position: {
     type: String,

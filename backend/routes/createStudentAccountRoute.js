@@ -4,9 +4,9 @@ import Users from "../Models/Users.js";
 
 const router = express.Router();
 
-router.post("/createStudentAccount", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    const { email, password, name, education, skills, university, role } = req.body;
+    const { email, password, name, education, skills, university, } = req.body;
 
     console.log("Reached createStudentAccount route");
 
@@ -23,9 +23,9 @@ router.post("/createStudentAccount", async (req, res) => {
     const newUser = new Users({
       email,
       password: hashedPassword,
-      role, // Use the role sent from the frontend
       name,
       education,
+      role: "Student",
       skills,
       university,
     });

@@ -4,11 +4,11 @@ import Users from "../Models/Users.js";
 
 const router = express.Router();
 
-router.post("/createRecruiterAccount", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    const { email, password, name, company, position, location, role } = req.body;
+    const { email, password, name, company, position, location,  } = req.body;
 
-    console.log("Reached createStudentAccount route");
+    console.log("Reached createRecruiterAccount route");
 
     // Check if the user already exists
     const existingUser = await Users.findOne({ email });
@@ -23,8 +23,8 @@ router.post("/createRecruiterAccount", async (req, res) => {
     const newUser = new Users({
       email,
       password: hashedPassword,
-      role, // Use the role sent from the frontend
       name,
+      role: "Recruiter",
       company,
       position,
       location,
