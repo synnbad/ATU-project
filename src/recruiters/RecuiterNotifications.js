@@ -5,6 +5,7 @@ const RecruiterNotifications = () => {
   // Sample data for notifications
   const notifications = [
     { id: 1, message: "You have a new message" },
+    { id: 2 , message: "John Doe applied for Junior Developer"}
     // Rest of the notifications data...
   ];
 

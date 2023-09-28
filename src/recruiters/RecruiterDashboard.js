@@ -12,6 +12,12 @@ const RecruiterDashboard = () => {
       position: "Software Intern",
       location: "Accra",
     },
+    {
+      id: 2,
+      company: "MTN Ghana",
+      position: "Marketing Intern",
+      loaction: "Tema",
+    },
     // Rest of the job listings data...
   ];
 

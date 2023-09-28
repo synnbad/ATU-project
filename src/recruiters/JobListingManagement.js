@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import "./JobListingManagement.css";
 
 const JobListingManagement = () => {
@@ -35,18 +34,18 @@ const JobListingManagement = () => {
               <p>{listing.location}</p>
             </div>
             <div className="buttons">
-              <Button
-                variant="primary"
+              <button
+                className="btn btn-primary"
                 onClick={() => handleEditListing(listing.id)}
               >
                 Edit
-              </Button>
-              <Button
-                variant="danger"
+              </button>
+              <button
+                className="btn btn-danger"
                 onClick={() => handleDeleteListing(listing.id)}
               >
                 Delete
-              </Button>
+              </button>
             </div>
           </li>
         ))}

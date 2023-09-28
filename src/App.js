@@ -10,7 +10,7 @@ import Login from "./Authentication/Login.js";
 import CreateJobListing from "./recruiters/CreateJobListing.js";
 import Applicants from "./recruiters/Applicants.js";
 import RecruiterNotifications from "./recruiters/RecuiterNotifications.js"
-import AccountCreationForm from "./Authentication/AccountCreationForm.js";
+
 import JobListingManagement from "./recruiters/JobListingManagement.js";
 
 
@@ -62,7 +62,6 @@ function App() {
         <Route path="/CreateJobListing" element={<CreateJobListing />} />
         <Route path="/Applicants" element={<Applicants />} />
         <Route path="/RecruiterNotifications" element={<RecruiterNotifications />}/>
-        <Route path="/AccountCreationForm" element={<AccountCreationForm />} />
         <Route path="/JobListingManagement" element={<JobListingManagement />} />
         <Route path="/Home" element={<Home />} />
       </Routes>

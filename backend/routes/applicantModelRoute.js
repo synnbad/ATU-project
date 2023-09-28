@@ -3,7 +3,7 @@ import ApplicantModel from "../Models/ApplicantModel.js";
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+router.post("/applicants", async (req, res) => {
   try {
     const { name, university, course } = req.body;
 

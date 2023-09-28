@@ -6,7 +6,7 @@ import RecruiterModel from "../Models/RecruiterModel.js";
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+router.post("/users", async (req, res) => {
   try {
     const { email, password, role } = req.body;
 

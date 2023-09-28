@@ -4,9 +4,11 @@ import Users from "../Models/Users.js";
 
 const router = express.Router();
 
-router.post("/createRecruiterAccount", async (req, res) => {
+router.post("/createStudentAccount", async (req, res) => {
   try {
-    const { email, password, name, company, position, location, role } = req.body;
+    const { email, password, name, education, skills, university, role } = req.body;
+
+    console.log("Reached createStudentAccount route");
 
     // Check if the user already exists
     const existingUser = await Users.findOne({ email });
@@ -23,9 +25,9 @@ router.post("/createRecruiterAccount", async (req, res) => {
       password: hashedPassword,
       role, // Use the role sent from the frontend
       name,
-      company,
-      position,
-      location,
+      education,
+      skills,
+      university,
     });
 
     // Save the user to the database
