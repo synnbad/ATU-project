@@ -93,7 +93,7 @@ const Login = () => {
           Login
         </Button>
 
-        <Link id="no-account" to="/create-account">
+        <Link id="no-account" to="/CreateAccount">
             Don’t have an account? Create one
           </Link>
       </Form>
