@@ -1,7 +1,8 @@
-// StudentController.js
+// Import the necessary models and modules
 
 import Student from "./src/recruiters/models/student.js";
 import JobListing from "../../../JobListing.js";
+import Notification from "./src/recruiters/models/notification.js";
 
 // Get Student Applications
 export const getStudentApplications = async (req, res) => {
@@ -39,14 +40,12 @@ export const getStudentDashboard = async (req, res) => {
       return res.status(404).json({ error: "Student not found" });
     }
 
-    // Fetch data for the student dashboard from the database or external APIs
-    // ...
+    // Implement your logic to fetch and process data for the student dashboard
+    // Example: Fetch data from your database or external APIs
+    // Replace with your actual data-fetching logic
+    const dashboardData = await fetchDataForStudentDashboard(student);
 
-    // Process the fetched data and render the student dashboard template or send the data as JSON
-    // ...
-
-    // Example: Sending a JSON response with sample data
-    res.status(200).json({ message: "Student dashboard data" });
+    res.status(200).json(dashboardData);
   } catch (error) {
     console.error("Error fetching student dashboard data:", error);
     res.status(500).json({ error: "Internal server error" });
@@ -86,4 +85,18 @@ export const getNotifications = async (req, res) => {
     console.error("Error fetching student notifications:", error);
     res.status(500).json({ error: "Internal server error" });
   }
+};
+
+// Helper function to fetch data for the student dashboard
+const fetchDataForStudentDashboard = async (student) => {
+  // Implement your logic to fetch and process data for the student dashboard here
+  // Example: Fetch data from your database or external APIs
+  // Replace with your actual data-fetching logic
+
+  const dashboardData = {
+    message: "Student dashboard data",
+    // Add more data fields as needed
+  };
+
+  return dashboardData;
 };

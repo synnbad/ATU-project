@@ -10,12 +10,18 @@ const StudentDashboard = () => {
       position: "Software Engineering Intern",
       location: "Madina,Accra",
     },
-
-
     // Rest of the job recommendations data...
   ];
 
   const appliedJobsCount = 5; // Sample data for the number of applied jobs
+
+  // Handle the internship application
+  const applyForInternship = (jobId) => {
+    // Implement your logic to apply for an internship here.
+    // This can include making an API request to submit the application.
+    // You can display a success message or handle errors as needed.
+    console.log(`Applied for internship with ID: ${jobId}`);
+  };
 
   return (
     <div className="container">
@@ -31,9 +37,14 @@ const StudentDashboard = () => {
                 <h3 className="jobCardTitle">{recommendation.position}</h3>
                 <p>{recommendation.company}</p>
                 <p>{recommendation.location}</p>
-                <Link to={`/job/${recommendation.id}`} className="link">
-                  View Details
-                </Link>
+                <button
+                  onClick={() => applyForInternship(recommendation.id)}
+                  className="link" 
+                ><Link to="/Applyforinternships" className="applyforinternships">
+                Apply For Internships
+              </Link>
+                  
+                </button>
               </div>
             ))}
           </div>
@@ -43,16 +54,8 @@ const StudentDashboard = () => {
             <p className="appliedJobsCount">
               You have applied to {appliedJobsCount} jobs
             </p>
-            <Link to="/applied-jobs" className="link">
+            <Link to="/Appliedinternships" className="link">
               View Applied Internships
-            </Link>
-          </div>
-
-          <div className="section">
-            <h2 className="sectionTitle">Your Profile</h2>
-            <p>View and update your profile information</p>
-            <Link to="/student-profile" className="link">
-              Go to Profile
             </Link>
           </div>
         </div>

@@ -13,6 +13,7 @@ import studentNotificationsRoute from "./backend/routes/studentNotificationsRout
 import createStudentAccount from "./backend/routes/createStudentAccount.js";
 import createRecruiterAccount from "./backend/routes/createRecruiterAccount.js";
 
+
 connectDB();
 
 const app = express();
@@ -43,6 +44,7 @@ app.use("/studentJobListing", studentJobListingRoute);
 app.use("/studentNotifications", studentNotificationsRoute);
 app.use("/createStudentAccount",createStudentAccount);
 app.use("/createRecruiterAccount",createRecruiterAccount);
+
 
 
 app.listen(port, () => {

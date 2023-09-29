@@ -9,9 +9,14 @@ import RecruiterDashboard from "./recruiters/RecruiterDashboard.js";
 import Login from "./Authentication/Login.js";
 import CreateJobListing from "./recruiters/CreateJobListing.js";
 import Applicants from "./recruiters/Applicants.js";
+import ApplyForinternship from "./students/Applyforinternship.js";
 import RecruiterNotifications from "./recruiters/RecuiterNotifications.js"
 
+import AppliedJobs from "./students/Appliedinternships.js";
+
+
 import JobListingManagement from "./recruiters/JobListingManagement.js";
+import StudentProfile from "./students/StudentProfile.js";
 
 
 function App() {
@@ -64,6 +69,10 @@ function App() {
         <Route path="/RecruiterNotifications" element={<RecruiterNotifications />}/>
         <Route path="/JobListingManagement" element={<JobListingManagement />} />
         <Route path="/Home" element={<Home />} />
+        <Route path="/StudentProfile" element={<StudentProfile />} />
+        
+        <Route path="/Appliedinternships" element={<AppliedJobs />} />
+        <Route path="/Applyforinternships" element={<ApplyForinternship />} />
       </Routes>
       <ToastContainer />
     </div>
